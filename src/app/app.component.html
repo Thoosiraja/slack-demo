@@ -1,8 +1,23 @@
-<div class="nav">
+<!-- <div class="nav">
     <app-navbar></app-navbar>
 </div>
 <div class="head">
     <app-first-sidebar></app-first-sidebar>
     <app-sidebar></app-sidebar>
     <router-outlet></router-outlet>
-</div>
+</div> -->
+
+<div class="app">
+        <app-navbar></app-navbar>
+    <div class="flex">
+      <div class="slack-nav">
+        <app-first-sidebar></app-first-sidebar>
+      </div>
+      <div class="menu">
+        <app-sidebar></app-sidebar>
+      </div>
+      <div class="content">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>

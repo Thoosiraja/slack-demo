@@ -17,6 +17,7 @@ export class NavbarComponent implements OnInit {
     if(this.isProfile)
     {
       this.isProfile = false
+      console.log(this.isProfile)
     }
     else{
       this.isProfile = true
