@@ -1,0 +1,15 @@
+*{
+    box-sizing: border-box;
+    background-color: #1B1D21;
+}
+.nav{
+    border-bottom: solid 1px white;
+}
+.head{
+    display: flex;
+    flex-flow: row;
+    box-sizing: border-box;
+}
+.app-main-component{
+    width: 70%;
+}

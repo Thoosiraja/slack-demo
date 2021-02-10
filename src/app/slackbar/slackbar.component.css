@@ -1,0 +1,72 @@
+/* html, body{
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    border: 0px;
+     background-color: yellowgreen; 
+} */
+.fullPage{
+    height: 100vh;
+    
+    background-color: violet;
+}
+.bar{
+    height: 65px;
+    width: 100%;
+    
+    display: flex;
+    flex-flow: row wrap;
+}
+.barLeft, .barRight{
+    flex: 1;
+    background-color: rgb(19, 18, 18);
+    margin: 0px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+.barRight{
+    flex-grow: 2.5;
+    background-color:rgb(36, 34, 34);
+
+}
+.barLeft-1{
+    font-weight: bolder;
+    color: white;
+    /* background-color: brown; */
+    margin: 5px;
+    flex: 1;
+    
+}
+.barLeft-1:nth-child(1)
+{
+    display: flex;
+    flex-grow: 4;
+}
+.barLeft-1:nth-child(2)
+{
+    display: flex;
+    flex-flow: row-reverse wrap;
+}
+.barRight-1{
+    font-weight: bolder;
+    color: white;
+    display: flex;
+    /* background-color: brown; */
+    margin: 1px;
+    flex: 1;
+    align-items: center;
+}
+.barRight :nth-child(2)
+{
+    flex-flow: row-reverse wrap;
+}
+.icons{
+    margin-left: 30px;
+    background-color:rgb(36, 34, 34);
+
+}
+.button{
+    border: none;
+
+}
