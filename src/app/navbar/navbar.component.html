@@ -1,0 +1,15 @@
+<div class="navbar-flex">
+    <div class="navbar">
+        <div class="navbar-center">
+            <div class="navbar-elements arrow"><i class="fas fa-arrow-left"></i></div>
+            <div class="navbar-elements arrow"><i class="fas fa-arrow-right"></i></div>
+            <div class="navbar-elements clock"><i class="fas fa-clock"></i></div>
+            <button class="search"></button>
+            <div class="navbar-elements help"><i class="far fa-question-circle"></i></div>
+        </div>
+        <div class="navbar-profile" (click)="changeProfile()"><i class="fas fa-user-circle fa-2x"></i></div>
+    </div>
+    <div *ngIf="isProfile" class="profile">
+        <app-profile></app-profile>
+    </div>
+</div>

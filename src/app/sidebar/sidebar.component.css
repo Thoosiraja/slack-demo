@@ -1,0 +1,44 @@
+*{
+    box-sizing: border-box;
+}
+.sidebar{
+    width:300px;
+    background-color: #19171D;
+    border-right: 1px double #a5a9b8; 
+    height: 700px;
+    overflow-y: scroll;
+}
+.menu{
+    height:50px;
+    padding: 15px;
+    color: #8F8F92;
+}
+.menu:hover{
+    background-color: rgb(65, 68, 68);
+}
+.sub-menu{
+    padding: 15px;
+    height: 40px;
+    color: #8F8F92;
+    margin-left: 10px;
+    
+    
+}
+.sub-menu:hover{
+    background-color: rgb(65, 68, 68);
+}
+.sub-menu a{
+    text-decoration: none;
+}
+.sub-menu a:visited{
+    color: #8F8F92;
+    text-decoration: none;
+}
+.menu .image{
+    float: left;
+    margin-right:10px;
+}
+.sub-menu .image{
+    float: left;
+    margin-right:10px;
+}
