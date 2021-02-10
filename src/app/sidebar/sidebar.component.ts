@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-sidebar',
@@ -6,7 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
-
+  closeResult=''
+  isChannelsVisible:boolean = true;
+  isDmVisible:boolean = true;
+  channelForm:FormGroup = this.formBuilder.group({
+    channel: new FormControl(),
+    type: new FormControl()
+  });
+  directForm:FormGroup = this.formBuilder.group({
+    name: new FormControl()
+  });
   Channels=[{id:1,name:"Channel 1",type:"private"},
   {id:2,name:"Channel 2",type:"public"},
   {id:3,name:"Channel 3",type:"public"},
@@ -20,28 +31,32 @@ export class SidebarComponent implements OnInit {
   value:boolean=false;
   value1:boolean=false;
 ​
-  constructor() { }
+  constructor(private modalService: NgbModal,private formBuilder: FormBuilder) { }
 ​
   ngOnInit(): void {
   }
-  showchannel(){
-  if(this.value){
-  this.value=false;
-  //this.Channels=this.Channels
+  ​open(content:any) {
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
   }
-  else{
-  document.getElementById("channel")?.style.display;
-  //this.Direct=this.Direct;
-  //this.Channels=[];
-  this.value=true;
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
   }
+
+  addTochannel(){
+    console.log("adding Channel..!");
   }
-  showmessage(){
-  if(this.value1){
-  this.value1=false;}
-  else{
-  this.value1=true;
+​   
+  addTodirect(){
+    console.log("adding DM..!");
   }
-  }
-  ​
 }

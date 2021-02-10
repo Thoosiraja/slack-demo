@@ -9,6 +9,7 @@ import { FirstSidebarComponent } from './first-sidebar/first-sidebar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { MainComponentComponent } from './main-component/main-component.component';
 import { Route, RouterModule, Routes } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const appRoute:Routes=[
   {path:'',component:MainComponentComponent},
@@ -28,6 +29,7 @@ const appRoute:Routes=[
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(appRoute),
   ],
   providers: [],

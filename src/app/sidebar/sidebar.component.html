@@ -1,66 +1,127 @@
 <div class="sidebar">
-   
+
   <div class="menu">
-   <div class="image">
-     <i class="far fa-comment-dots"></i>
-   </div>Threads</div>
+    <div class="image">
+      <i class="far fa-comment-dots"></i>
+    </div>Threads
+  </div>
   <div class="menu">
-   <div class="image">
-     <i class="fas fa-comments"></i>
-   </div>All DM's</div>
-   <div class="menu"> 
-     <div class="image">
-     <i class="fas fa-at"></i>
-   </div>
-     Mentions and Reactions
-   </div> 
-   <div class="menu">
-     <div class="image">
-       <i class="far fa-bookmark"></i>
-     </div>
-     Saved Items</div> 
-   <div class="menu">
-     <div class="image">
-       <i class="fas fa-ellipsis-v"></i>
-     </div>
-     More</div>   
-   <div class="menu">
-     <div (click)="showchannel()" class="image">
-       <i class="fas fa-caret-down"></i>
-     </div>Channels </div> 
-        <div   class="sub-menu" *ngFor ="let channel of Channels">
-          <div *ngIf="!value">
-         <div class="image">
-           <i class="fas fa-lock"></i>
-         </div>
-           <a [routerLink]="['/main-component',channel.name]">{{channel.name}}</a>
-         </div>
-       </div>
-         <div class="sub-menu">
-           <div class="image">
-             <i class="fas fa-plus-circle"></i>
-           </div>
-           Add Channel
-       </div>
-  
-   <div class="menu">
-     <div (click)="showmessage()" class="image">
-       <i class="fas fa-caret-down"></i>
-     </div>Private Message </div> 
-     <!-- <ng-template *ngIf="!value1"> -->
-       <div  id="channel" class="sub-menu" *ngFor ="let direct of Direct">
-         <!-- <div *ngIf="!value1"> -->
-         <div class="image">
-           <i class="fas fa-user"></i>
-         </div>
-          <a [routerLink]="['/main-component',direct.name]">{{direct.name}}</a>
-        </div>
-        <!-- </ng-template> -->
-       <!-- </div> -->
-        <div class="sub-menu">
-         <div class="image">
-           <i class="fas fa-plus-circle"></i>
-         </div>
-            Add Team-mates
-        </div>
-     </div>
+    <div class="image">
+      <i class="fas fa-comments"></i>
+    </div>All DM's
+  </div>
+  <div class="menu">
+    <div class="image">
+      <i class="fas fa-at"></i>
+    </div>
+    Mentions and Reactions
+  </div>
+  <div class="menu">
+    <div class="image">
+      <i class="far fa-bookmark"></i>
+    </div>
+    Saved Items
+  </div>
+  <div class="menu">
+    <div class="image">
+      <i class="fas fa-ellipsis-v"></i>
+    </div>
+    More
+  </div>
+  <div (click)="isChannelsVisible=!isChannelsVisible" class="menu">
+    <div class="image">
+      <i *ngIf="!isChannelsVisible" class="fas fa-caret-right"></i>
+      <i *ngIf="isChannelsVisible" class="fas fa-caret-down"></i>
+    </div>Channels
+  </div>
+  <div *ngIf="isChannelsVisible">
+    <div class="sub-menu" *ngFor="let channel of Channels">
+      <div class="image">
+        <i class="fas fa-lock"></i>
+      </div>
+      <a [routerLink]="['/main-component',channel.name]">{{channel.name}}</a>
+    </div>
+  </div>
+  <div (click)="open(content1)" class="sub-menu">
+    <div class="image">
+      <i class="fas fa-plus-circle"></i>
+    </div>
+    Add Channel
+  </div>
+
+  <div (click)="isDmVisible=!isDmVisible" class="menu">
+    <div class="image">
+      <i *ngIf="!isDmVisible" class="fas fa-caret-right"></i>
+      <i *ngIf="isDmVisible" class="fas fa-caret-down"></i>
+    </div>Private Message
+  </div>
+  <div *ngIf="isDmVisible">
+    <div id="channel" class="sub-menu" *ngFor="let direct of Direct">
+      <div class="image">
+        <i class="fas fa-user"></i>
+      </div>
+      <a [routerLink]="['/main-component',direct.name]">{{direct.name}}</a>
+    </div>
+  </div>
+  <div (click)="open(content)" class="sub-menu">
+    <div class="image">
+      <i class="fas fa-plus-circle"></i>
+    </div>
+    Add Team-mates
+  </div>
+</div>
+
+
+
+
+
+
+​
+<ng-template #content1 let-modal>
+  <div class="mod container popup">
+    <div class="modal-header">
+      <h4 class="modal-title">Create Channel</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div>
+      <form [formGroup]="channelForm" (ngSubmit)="addTochannel()">
+      <input type="text" required class="form-control form-input" placeholder="Channel name" formControlName="channel">
+      <select class="form-control form-input" required formControlName="type">
+        <option value="public">public</option>
+        <option value="private">private</option>
+      </select>
+      <button class="btn btn-primary"  [disabled]="channelForm.invalid">Add Channel</button>
+     </form>
+    </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-danger" (click)="modal.close('Close click')">Close</button>
+    </div>
+  </div>
+</ng-template>
+​
+​
+<ng-template #content let-modal >
+  <div class="mod container popup">
+    <div class="modal-header">
+      <h4 class="modal-title">Start a Conversation</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div>
+      <form [formGroup]="directForm" (ngSubmit)="addTodirect()">
+      <input type="text" required class="form-control form-input" placeholder="Team Mate Name" formControlName="name">
+      <button class="btn btn-primary"  [disabled]="directForm.invalid">Start conversation</button>
+     </form>
+    </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-danger" (click)="modal.close('Close click')">Close</button>
+    </div>
+  </div>
+</ng-template>
