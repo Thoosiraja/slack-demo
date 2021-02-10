@@ -9,7 +9,6 @@ import { FirstSidebarComponent } from './first-sidebar/first-sidebar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { MainComponentComponent } from './main-component/main-component.component';
 import { Route, RouterModule, Routes } from '@angular/router';
-import { TempComponent } from './temp/temp.component';
 
 const appRoute:Routes=[
   {path:'',component:MainComponentComponent},
@@ -25,7 +24,6 @@ const appRoute:Routes=[
     FirstSidebarComponent,
     SidebarComponent,
     MainComponentComponent,
-    TempComponent
   ],
   imports: [
     BrowserModule,
