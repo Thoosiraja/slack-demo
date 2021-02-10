@@ -1,6 +1,6 @@
 .profile{
-    height: 100%;
-    width: 100%;
+    height: 500px;
+    width: 300px;
     box-sizing: border-box;
     background-color: #212629;
     border: rgba(216, 214, 214, 0.342) solid 1px;
@@ -13,16 +13,14 @@
 }
 .profile-one{
     padding: 20px;
-    height:40%;
+    height:30%;
     padding-bottom: 0px;
 }
 .profile-two{
-    height: 23%;
     padding: 0px 0px;
 }
 .profile-three{
     padding: 5px 0px;
-    height: 8%;
 }
 .flex-row{
     display: flex;
@@ -57,4 +55,7 @@
 }
 .profile-option:hover{
     background-color: #1C9BD1;
+}
+hr{
+    background-color: white;
 }
