@@ -10,6 +10,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { MainComponentComponent } from './main-component/main-component.component';
 import { Route, RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DataService } from './data.service';
 
 const appRoute:Routes=[
   {path:'',component:MainComponentComponent},
@@ -32,7 +33,7 @@ const appRoute:Routes=[
     ReactiveFormsModule,
     RouterModule.forRoot(appRoute),
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
