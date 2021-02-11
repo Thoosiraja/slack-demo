@@ -19,8 +19,10 @@ export class AppComponent implements OnInit{
   }
   updateChannel(value:any){
     this.data.channels = value as IChannels[];
+    this.dataService.pushData(this.data);
   }
   updateDM(value:any){
     this.data.directMessages = value as IDirectDM[];
+    this.dataService.pushData(this.data);
   }
 }

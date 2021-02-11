@@ -36,7 +36,11 @@
   </div>
   <div *ngIf="isChannelsVisible">
     <div class="sub-menu" *ngFor="let channel of channels" [routerLink]="['/main-component',channel.name]">
-      <div class="image">
+      <div *ngIf="channel.type=='public'" class="image">
+        <i class="fas fa-hashtag"></i>
+        
+      </div>
+      <div *ngIf="channel.type=='private'" class="image">
         <i class="fas fa-lock"></i>
       </div>
       <a >{{channel.name}}</a>

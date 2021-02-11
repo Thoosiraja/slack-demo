@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, EventEmitter } from '@angular/core';
+import { Component, Input, Output,OnInit, EventEmitter } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { IChannels, IDirectDM } from 'src/interfaces/data.interfaces';
@@ -24,8 +24,8 @@ export class SidebarComponent implements OnInit {
   @Input() directDM = Array<IDirectDM>();
   value: boolean = false;
   value1: boolean = false;
-  updateChannel = new EventEmitter<IChannels[]>();
-  updateDM = new EventEmitter<IDirectDM[]>();
+  @Output() updateChannel = new EventEmitter<IChannels[]>();
+  @Output() updateDM = new EventEmitter<IDirectDM[]>();
 
 
 

@@ -10,7 +10,17 @@ export class DataService {
   constructor() { 
     fetch("https://6023da1b6bf3e6001766b98e.mockapi.io/api/data/slackDemo")
       .then(res => res.json())
-      .then(data => {this.data.next(data[0] as IData)})
+      .then(data => {this.data.next(data[data.length-1] as IData)})
       .catch(err => console.log(err));
+  }
+
+  pushData =(data:IData) =>{
+    fetch("https://6023da1b6bf3e6001766b98e.mockapi.io/api/data/slackDemo", {
+      method: 'POST', // or 'PUT'
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
   }
 }
