@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, EventEmitter } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { IChannels, IDirectDM } from 'src/interfaces/data.interfaces';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -6,42 +10,73 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
+  closeResult = ''
+  isChannelsVisible: boolean = true;
+  isDmVisible: boolean = true;
+  channelForm: FormGroup = this.formBuilder.group({
+    channel: new FormControl(),
+    type: new FormControl()
+  });
+  directForm: FormGroup = this.formBuilder.group({
+    name: new FormControl()
+  });
+  @Input() channels = Array<IChannels>();
+  @Input() directDM = Array<IDirectDM>();
+  value: boolean = false;
+  value1: boolean = false;
+  updateChannel = new EventEmitter<IChannels[]>();
+  updateDM = new EventEmitter<IDirectDM[]>();
 
-  Channels=[{id:1,name:"Channel 1",type:"private"},
-  {id:2,name:"Channel 2",type:"public"},
-  {id:3,name:"Channel 3",type:"public"},
-  {id:4,name:"Channel 4",type:"public"},
-  {id:5,name:"Channel 5",type:"public"},
-  {id:6,name:"Channel 6",type:"public"}];
 
-  Direct=[{id:1,name:"Person 1"},{id:2,name:"Person 2"},{id:2,name:"Person 2"},{id:2,name:"Person 2"},{id:2,name:"Person 2"},{id:2,name:"Person 2"}];
-  channelsd=[]
-  Directd=[]
-  value:boolean=false;
-  value1:boolean=false;
-​
-  constructor() { }
-​
+
+
+  constructor(private modalService: NgbModal, private formBuilder: FormBuilder) { }
+
   ngOnInit(): void {
   }
-  showchannel(){
-  if(this.value){
-  this.value=false;
-  //this.Channels=this.Channels
+  open(content: any) {
+    this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
   }
-  else{
-  document.getElementById("channel")?.style.display;
-  //this.Direct=this.Direct;
-  //this.Channels=[];
-  this.value=true;
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
   }
+
+  addTochannel() {
+    let toLoadChannel:IChannels = {
+      id: this.channels.length+1,
+      isRead: true,
+      membersID :[],
+      messagesID:[],
+      name: this.channelForm.value.channel,
+      type: this.channelForm.value.type
+    };
+    this.channels.push(toLoadChannel);
+    this.modalService.dismissAll();
+    this.channelForm.controls.channel = new FormControl();
+    this.channelForm.controls.type = new FormControl();
+    this.updateChannel.emit(this.channels);
   }
-  showmessage(){
-  if(this.value1){
-  this.value1=false;}
-  else{
-  this.value1=true;
+
+  addTodirect() {
+    let toLoadDM:IDirectDM = {
+      id: this.directDM.length+1,
+      isRead: true,
+      messagesID: [],
+      name: this.directForm.value.name
+    };
+    this.directDM.push(toLoadDM);
+    this.modalService.dismissAll();
+    this.directForm.controls.name = new FormControl();
+    this.updateDM.emit(this.directDM);
   }
-  }
-  ​
 }

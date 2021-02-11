@@ -1,15 +1,23 @@
-<div class="navbar-flex">
-    <div class="navbar">
-        <div class="navbar-center">
-            <div class="navbar-elements arrow"><i class="fas fa-arrow-left"></i></div>
-            <div class="navbar-elements arrow"><i class="fas fa-arrow-right"></i></div>
-            <div class="navbar-elements clock"><i class="fas fa-clock"></i></div>
-            <button class="search"></button>
-            <div class="navbar-elements help"><i class="far fa-question-circle"></i></div>
-        </div>
-        <div class="navbar-profile" (click)="changeProfile()"><i class="fas fa-user-circle fa-2x"></i></div>
-    </div>
+<div class="slackNav">
+    <nav class="navbar navbar-expand-lg nav">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item center">
+            <i class="fas fa-arrow-left navbar-text" data-toggle="tooltip" data-placement="top" title="Back In History"></i>
+            <i class="fas fa-arrow-right navbar-text" data-toggle="tooltip" data-placement="top" title="Forward In History"></i>
+            <i class="far fa-clock navbar-text" data-toggle="tooltip" data-placement="top" title="history"></i>
+          </li>
+          <li class="nav-item" (click)="togglesearchpopup()">
+            <input placeholder="Search" class="form-control mr-sm-2 searchbar" />
+          </li>
+          <li class="nav-item">
+            <i class="far fa-question-circle navbar-text" data-toggle="tooltip" data-placement="top" title="Help"></i>
+          </li>
+        </ul>
+        <i (click)="changeProfile()" class="fas fa-user fa-2x user-profile-icon"></i>
+      </div>
+    </nav>
     <div *ngIf="isProfile" class="profile">
         <app-profile></app-profile>
     </div>
-</div>
+  </div>

@@ -2,10 +2,10 @@
     box-sizing: border-box;
 }
 .sidebar{
-    width:300px;
+    width:100%;
     background-color: #19171D;
     border-right: 1px double #a5a9b8; 
-    height: 700px;
+    height: 100%;
     overflow-y: scroll;
 }
 .menu{
@@ -21,11 +21,10 @@
     height: 40px;
     color: #8F8F92;
     margin-left: 10px;
-    
-    
 }
 .sub-menu:hover{
     background-color: rgb(65, 68, 68);
+    cursor: pointer;
 }
 .sub-menu a{
     text-decoration: none;
@@ -42,3 +41,21 @@
     float: left;
     margin-right:10px;
 }
+
+.popup{
+    color: white;
+    background-color: rgb(36, 36, 36);
+}
+.close{
+    color: white;
+}
+.form-input{
+    margin-bottom: 5%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.377);
+    border-color: rgba(255, 255, 255, 0.205);
+}
+
+button:disabled {
+    cursor: not-allowed;
+  }

@@ -10,6 +10,7 @@
     padding: 2vh;
     display: flex;
     border-bottom: 1px solid white;
+    width: 115%;
 }
 .header > .convoName{
     width: 92vw;
@@ -22,10 +23,10 @@
     cursor: pointer;
 }
 .conversation {
-    height: 67vh;
+    height: 62vh;
 }
 .input-box{
-    height: auto;
+    width:74vw;
     padding:5px;
     
 }
@@ -42,6 +43,7 @@
     /* width: 700px; */
     background-color: transparent;
     border: 0px;
+    width:100%;
     height:100px;
     color: white;
     resize: none;
@@ -51,6 +53,7 @@
     outline: none;
 }
 .message-box-options{
+    width: 100%;
     display: flex;
 }
 .message-box-options > .font-options{
