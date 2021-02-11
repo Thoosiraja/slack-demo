@@ -21,8 +21,6 @@
     height: 40px;
     color: #8F8F92;
     margin-left: 10px;
-    
-    
 }
 .sub-menu:hover{
     background-color: rgb(65, 68, 68);
@@ -41,4 +39,18 @@
 .sub-menu .image{
     float: left;
     margin-right:10px;
+}
+
+.popup{
+    color: white;
+    background-color: rgb(36, 36, 36);
+}
+.close{
+    color: white;
+}
+.form-input{
+    margin-bottom: 5%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.377);
+    border-color: rgba(255, 255, 255, 0.205);
 }
