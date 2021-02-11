@@ -3,8 +3,8 @@
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item center">
-            <i class="fas fa-arrow-left navbar-text" data-toggle="tooltip" data-placement="top" title="Back In History"></i>
-            <i class="fas fa-arrow-right navbar-text" data-toggle="tooltip" data-placement="top" title="Forward In History"></i>
+            <i (click)="routerBack()" class="fas fa-arrow-left navbar-text" data-toggle="tooltip" data-placement="top" title="Back In History"></i>
+            <i (click)="routerForward()" class="fas fa-arrow-right navbar-text" data-toggle="tooltip" data-placement="top" title="Forward In History"></i>
             <i class="far fa-clock navbar-text" data-toggle="tooltip" data-placement="top" title="history"></i>
           </li>
           <li class="nav-item" (click)="togglesearchpopup()">

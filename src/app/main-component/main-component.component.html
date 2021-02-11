@@ -9,8 +9,7 @@
     <div class="conversation">
       <div *ngFor="let message of messages">
         <div class="message">
-          {{message.from}} : 
-          {{message.messages}}
+          <app-message [message]="message"></app-message>
         </div>
       </div>
     </div>

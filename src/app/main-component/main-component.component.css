@@ -13,6 +13,8 @@
     width: 74vw;
 }
 .header > .convoName{
+    font-size: 130%;
+    font-weight: 800;
     width: 92vw;
 }
 .header > .convoOptions{
