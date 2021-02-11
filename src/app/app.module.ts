@@ -11,6 +11,7 @@ import { MainComponentComponent } from './main-component/main-component.componen
 import { Route, RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DataService } from './data.service';
+import { SearchpopupComponent } from './searchpopup/searchpopup.component';
 
 const appRoute:Routes=[
   {path:'',component:MainComponentComponent},
@@ -20,6 +21,7 @@ const appRoute:Routes=[
 
 @NgModule({
   declarations: [
+    SearchpopupComponent,
     AppComponent,
     NavbarComponent,
     ProfileComponent,

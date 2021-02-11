@@ -23,4 +23,13 @@ export class NavbarComponent implements OnInit {
       this.isProfile = true
     }
   }
+  togglesearchpopup(){
+    var a = document.getElementById("searchpopup");
+    if(a!==null){
+    if(a?.style.display==="none"){
+      a.style.display="block";
+    }
+    else{a.style.display="none";}
+  }
+ }
 }

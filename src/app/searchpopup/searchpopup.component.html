@@ -1,0 +1,54 @@
+<div class="searchpopup">
+    <div class="searchbar">
+      <div class="searchsymbol icon">
+        <i class="fas fa-search "></i>
+      </div>
+      <textarea class="textarea" placeholder="Search Here..."></textarea>
+      <div (click)="togglesearchpopup()" class="closesymbol icon">
+        <i class="fas fa-times"></i>
+      </div>
+    </div>
+    
+    <div class="searchoptions"><br>
+        <div class="heading text">I'm looking for</div>
+        <div class="availableoptions">
+            <div class="menu messages">
+                <div class="message icon menuicon">
+                    <i class="far fa-comment-alt"></i>
+                </div>
+                <div class="menuname">Messages</div>
+            </div>
+            <div class="menu files">
+                <div class="file icon menuicon">
+                    <i class="far fa-file"></i>
+                </div>
+                <div class="menuname">Files</div>
+            </div>
+            <div class="menu channels">
+                <div class="Channel icon menuicon">
+                    <i class="fas fa-hashtag"></i>
+                </div>
+                <div class="menuname">Channels</div>
+            </div>
+            <div class="menu peoples">
+                <div class="people icon menuicon">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="menuname">People</div>
+            </div>
+        </div>
+        <div class="heading text">Recent searches</div>
+        <div class="recentsearches">
+            <div class="recentbox" *ngFor="let recent of recentsearches">
+              <div class="recentelements">
+                <div class="clock icon">
+                    <i class="fas fa-clock "></i>
+                </div>
+                <div class="searchedname text">{{recent.name}}</div>
+                <div class="additionalinfo text">  --  Search messages, files and more</div>
+              </div>
+            </div>
+        </div>
+   </div>
+   <div class="footer"></div>
+</div>

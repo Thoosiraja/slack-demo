@@ -56,3 +56,10 @@
     height: auto;
     margin-right: 10px;
 }
+
+.searchpopup{
+    position:absolute;
+    left:20%;
+    top:0%;
+    display: none;
+}
