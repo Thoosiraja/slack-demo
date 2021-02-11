@@ -15,7 +15,7 @@ import { SearchpopupComponent } from './searchpopup/searchpopup.component';
 
 const appRoute:Routes=[
   {path:'',component:MainComponentComponent},
-  {path:'main-component/:name',component:MainComponentComponent},
+  {path:'main-component/:id/:name/:type',component:MainComponentComponent},
   
 ]
 

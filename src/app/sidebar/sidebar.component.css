@@ -20,13 +20,18 @@
     padding: 15px;
     height: 40px;
     color: #8F8F92;
-    margin-left: 10px;
+    /* margin-left: 10px; */
 }
 .sub-menu:hover{
     background-color: rgb(65, 68, 68);
     cursor: pointer;
 }
+.sub-menu:focus{
+    outline: none;
+    background-color: rgb(78, 107, 238);
+}
 .sub-menu a{
+    color: #8F8F92;
     text-decoration: none;
 }
 .sub-menu a:visited{

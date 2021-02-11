@@ -21,7 +21,7 @@ export interface IMessages{
     toType:string,
     toID:number,
     date:Date,
-    time:Time,
+    time:Date,
     messages:string
 }
 export interface IProfile{
@@ -37,5 +37,5 @@ export interface IData{
     profile:IProfile,
     channels:Array<IChannels>,
     directMessages:Array<IDirectDM>,
-    messages:Object
+    messages:any
 }

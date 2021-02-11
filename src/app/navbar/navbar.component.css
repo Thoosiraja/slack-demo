@@ -1,14 +1,13 @@
-.close-icon{
+/* .close-icon{
     color: red;
     margin:3px;
-}
+} */
 .slackNav{
-    border: 0.5px rgb(51, 1, 51);;
     border-bottom: 0.5px rgba(255, 255, 255, 0.918);
     border-style: solid;
     position: relative;
 }
-.minimise-icon{
+/* .minimise-icon{
     color: yellow;
     margin: 3px;
 }
@@ -33,7 +32,7 @@
     box-sizing: padding-box;
     border-radius: 50%;
     margin: 3px;
-}
+} */
 .user-profile-icon{
     color: white;
     margin: 0px 10px;

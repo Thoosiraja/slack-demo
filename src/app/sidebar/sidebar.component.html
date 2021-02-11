@@ -35,7 +35,7 @@
     </div>Channels
   </div>
   <div *ngIf="isChannelsVisible">
-    <div class="sub-menu" *ngFor="let channel of channels" [routerLink]="['/main-component',channel.name]">
+    <div class="sub-menu" *ngFor="let channel of channels" [routerLink]="['/main-component',channel.id,channel.name,'channel']">
       <div *ngIf="channel.type=='public'" class="image">
         <i class="fas fa-hashtag"></i>
         
@@ -60,7 +60,7 @@
     </div>Private Message
   </div>
   <div *ngIf="isDmVisible">
-    <div id="channel" [routerLink]="['/main-component',direct.name]" class="sub-menu" *ngFor="let direct of directDM">
+    <div id="channel" [routerLink]="['/main-component',direct.id,direct.name,'dm']" class="sub-menu" *ngFor="let direct of directDM">
       <div class="image">
         <i class="fas fa-user"></i>
       </div>
