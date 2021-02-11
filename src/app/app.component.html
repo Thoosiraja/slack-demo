@@ -8,16 +8,16 @@
 </div> -->
 
 <div class="app">
-        <app-navbar></app-navbar>
-    <div class="flex">
-      <div class="slack-nav">
-        <app-first-sidebar></app-first-sidebar>
-      </div>
-      <div class="menu">
-        <app-sidebar></app-sidebar>
-      </div>
-      <div class="content">
-        <router-outlet></router-outlet>
-      </div>
+  <app-navbar></app-navbar>
+  <div class="flex">
+    <div class="slack-nav">
+      <app-first-sidebar></app-first-sidebar>
+    </div>
+    <div class="menu">
+      <app-sidebar (updateChannel)="updateChannel($event)" (updateDM)="updateDM($event)" [channels]="data.channels" [directDM]="data.directMessages"></app-sidebar>
+    </div>
+    <div class="content">
+      <router-outlet></router-outlet>
     </div>
   </div>
+</div>

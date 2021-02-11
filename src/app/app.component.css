@@ -14,14 +14,14 @@
     width: 70%;
 } */
 .app{
-    height: 100vh;
+    height: 100%;
     position: relative;
 }
 .flex{
     display: flex;
 }
 .slack-nav{
-    height: 92vh;
+    height: 93vh;
     width: 4%;
     background-color: rgb(20%, 1%, 20%);
     color: white;
@@ -29,7 +29,7 @@
 
 .menu{
     margin-left: 1px;
-    height: 92vh;
+    height: 93vh;
     width: 20%;
     background-color: rgb(20%, 1%, 20%);
     color: white;
@@ -37,7 +37,7 @@
 
 .content{
     margin-left: 1px;
-    height: 92vh;
+    height: 93vh;
     width: 76%;
     background-color: #1C1C1C;
     color: white;

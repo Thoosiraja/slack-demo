@@ -35,11 +35,11 @@
     </div>Channels
   </div>
   <div *ngIf="isChannelsVisible">
-    <div class="sub-menu" *ngFor="let channel of Channels">
+    <div class="sub-menu" *ngFor="let channel of channels" [routerLink]="['/main-component',channel.name]">
       <div class="image">
         <i class="fas fa-lock"></i>
       </div>
-      <a [routerLink]="['/main-component',channel.name]">{{channel.name}}</a>
+      <a >{{channel.name}}</a>
     </div>
   </div>
   <div (click)="open(content1)" class="sub-menu">
@@ -56,11 +56,11 @@
     </div>Private Message
   </div>
   <div *ngIf="isDmVisible">
-    <div id="channel" class="sub-menu" *ngFor="let direct of Direct">
+    <div id="channel" [routerLink]="['/main-component',direct.name]" class="sub-menu" *ngFor="let direct of directDM">
       <div class="image">
         <i class="fas fa-user"></i>
       </div>
-      <a [routerLink]="['/main-component',direct.name]">{{direct.name}}</a>
+      <a>{{direct.name}}</a>
     </div>
   </div>
   <div (click)="open(content)" class="sub-menu">
@@ -73,9 +73,8 @@
 
 
 
-
-
-
+<!-- ---------------------------------------POPUP MODAL--------------------------------------- -->
+<!-- ---------------------------------------Channel Creation--------------------------------------- -->
 ​
 <ng-template #content1 let-modal>
   <div class="mod container popup">
@@ -102,8 +101,7 @@
     </div>
   </div>
 </ng-template>
-​
-​
+<!-- ---------------------------------------New DM conversation--------------------------------------- -->
 <ng-template #content let-modal >
   <div class="mod container popup">
     <div class="modal-header">

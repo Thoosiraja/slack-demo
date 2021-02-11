@@ -24,6 +24,7 @@
 }
 .sub-menu:hover{
     background-color: rgb(65, 68, 68);
+    cursor: pointer;
 }
 .sub-menu a{
     text-decoration: none;
@@ -54,3 +55,7 @@
     background-color: rgba(0, 0, 0, 0.377);
     border-color: rgba(255, 255, 255, 0.205);
 }
+
+button:disabled {
+    cursor: not-allowed;
+  }
