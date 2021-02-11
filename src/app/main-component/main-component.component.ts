@@ -25,7 +25,6 @@ export class MainComponentComponent implements OnInit {
       this.id = params['id'];
       this.name = params['name'];
       this.type = params['type'];
-      debugger;
       this.messages = [];
       this.dataService.data.subscribe(val =>{
         this.data = val;
@@ -55,7 +54,7 @@ export class MainComponentComponent implements OnInit {
   }
   @Input() name : String;
 
-  send = (message:any) =>{
+  send = (message:any,event:any) =>{
     let messages : IMessages ={
       date:new Date(),
       from: this.data.profile.name,
@@ -87,5 +86,6 @@ export class MainComponentComponent implements OnInit {
     }
     this.messages.push(messages)
    this.dataService.pushData(this.data)
+   event.value = "";
   }
 }
