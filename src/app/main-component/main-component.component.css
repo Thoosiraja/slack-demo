@@ -10,7 +10,7 @@
     padding: 2vh;
     display: flex;
     border-bottom: 1px solid white;
-    width: 115%;
+    width: 100%;
 }
 .header > .convoName{
     width: 92vw;
