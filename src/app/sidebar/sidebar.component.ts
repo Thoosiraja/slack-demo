@@ -62,7 +62,7 @@ export class SidebarComponent implements OnInit {
     };
     this.channels.push(toLoadChannel);
     this.modalService.dismissAll();
-    this.channelForm.controls.channel = new FormControl();
+    //this.channelForm.controls.channel = new FormControl();
     this.channelForm.controls.type = new FormControl();
     this.updateChannel.emit(this.channels);
   }
@@ -76,7 +76,7 @@ export class SidebarComponent implements OnInit {
     };
     this.directDM.push(toLoadDM);
     this.modalService.dismissAll();
-    this.directForm.controls.name = new FormControl();
+    //this.directForm.controls.name = new FormControl();
     this.updateDM.emit(this.directDM);
   }
 }
