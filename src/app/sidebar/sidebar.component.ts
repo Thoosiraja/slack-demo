@@ -63,7 +63,7 @@ export class SidebarComponent implements OnInit {
     this.channels.push(toLoadChannel);
     this.modalService.dismissAll();
     //this.channelForm.controls.channel = new FormControl();
-    this.channelForm.controls.type = new FormControl();
+    // this.channelForm.controls.type = new FormControl();
     this.updateChannel.emit(this.channels);
   }
 
