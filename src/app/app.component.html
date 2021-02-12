@@ -1,13 +1,13 @@
 <div class="app">
-  <app-navbar class="bg-dark"></app-navbar>
+  <app-navbar [ngClass]=theme></app-navbar>
   <div class="flex">
-    <div class="slack-nav bg-dark">
+    <div class="slack-nav" [ngClass]=theme>
       <app-first-sidebar></app-first-sidebar>
     </div>
-    <div class="menu bg-dark">
+    <div class="menu" [ngClass]=theme>
       <app-sidebar (updateChannel)="updateChannel($event)" (updateDM)="updateDM($event)" [channels]="data.channels" [directDM]="data.directMessages"></app-sidebar>
     </div>
-    <div class="content bg-dark">
+    <div class="content" [ngClass]=theme>
       <!-- [class.bg-dark]="" -->
       <router-outlet></router-outlet>
     </div>

@@ -8,6 +8,7 @@ import { DataService } from './data.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
+  theme:String=''
   data:IData;
   constructor(private dataService:DataService){
     this.data = new Object as IData;
@@ -16,6 +17,15 @@ export class AppComponent implements OnInit{
     this.dataService.data.subscribe(value => {
       this.data = value as IData;
     });
+    this.dataService.isDark.subscribe(val =>{
+      if(val)
+      {
+        this.theme = 'bg-dark';
+      }
+      else{
+        this.theme = 'bg-light';
+      }
+    })
   }
   updateChannel(value:any){
     this.data.channels = value as IChannels[];
