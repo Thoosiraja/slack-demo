@@ -7,6 +7,7 @@ import {BehaviorSubject, Observable} from 'rxjs';
 })
 export class DataService {
   data = new BehaviorSubject(new Object as IData);
+  isDark = true;
   constructor() { 
     fetch("https://6023da1b6bf3e6001766b98e.mockapi.io/api/data/slackDemo")
       .then(res => res.json())

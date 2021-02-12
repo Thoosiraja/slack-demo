@@ -1,23 +1,14 @@
-<!-- <div class="nav">
-    <app-navbar></app-navbar>
-</div>
-<div class="head">
-    <app-first-sidebar></app-first-sidebar> 
-    <app-sidebar></app-sidebar>
-    <router-outlet></router-outlet>
-</div >
-</div> -->
-
 <div class="app">
-  <app-navbar></app-navbar>
+  <app-navbar class="bg-dark"></app-navbar>
   <div class="flex">
-    <div class="slack-nav">
+    <div class="slack-nav bg-dark">
       <app-first-sidebar></app-first-sidebar>
     </div>
-    <div class="menu">
+    <div class="menu bg-dark">
       <app-sidebar (updateChannel)="updateChannel($event)" (updateDM)="updateDM($event)" [channels]="data.channels" [directDM]="data.directMessages"></app-sidebar>
     </div>
-    <div class="content">
+    <div class="content bg-dark">
+      <!-- [class.bg-dark]="" -->
       <router-outlet></router-outlet>
     </div>
   </div>

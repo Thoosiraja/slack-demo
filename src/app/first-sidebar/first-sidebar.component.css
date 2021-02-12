@@ -1,6 +1,6 @@
 .side{
     width:100%;
     height:100%;
-    background-color: #19171D;
-    border-right: 1px double #a5a9b8; 
+    background-color: inherit;
+    border-right: 1px solid black; 
 }

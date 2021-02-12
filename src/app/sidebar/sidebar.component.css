@@ -3,27 +3,30 @@
 }
 .sidebar{
     width:100%;
-    background-color: #19171D;
-    border-right: 1px double #a5a9b8; 
+    background-color: inherit;
+    border-right: 1px solid; 
     height: 100%;
     overflow-y: scroll;
 }
 .menu{
     height:50px;
     padding: 15px;
-    color: #8F8F92;
+    /* color: #8F8F92; */
+    color: inherit;
 }
 .menu:hover{
-    background-color: rgb(65, 68, 68);
+    /* background-color: rgb(65, 68, 68); */
+    background-color: grey;
 }
 .sub-menu{
-    padding: 15px;
+    padding: 10px;
     height: 40px;
-    color: #8F8F92;
+    /* color: #8F8F92; */
+    color: inherit;
     /* margin-left: 10px; */
 }
 .sub-menu:hover{
-    background-color: rgb(65, 68, 68);
+    background-color: grey;
     cursor: pointer;
 }
 .sub-menu:focus{
@@ -31,11 +34,11 @@
     background-color: rgb(78, 107, 238);
 }
 .sub-menu a{
-    color: #8F8F92;
+    color: inherit;
     text-decoration: none;
 }
 .sub-menu a:visited{
-    color: #8F8F92;
+    color: inherit;
     text-decoration: none;
 }
 .menu .image{
